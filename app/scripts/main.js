@@ -26,14 +26,14 @@ $('document').ready(function() {
 			}
 		});
 	});
-
+	$('.modal').modal('show')
 
 }); // end of document ready
 
 // Functions
 // fetches MessageCollection
 function fetchMessageCollection(messages) {
-	MessageClassCollection.fetch({
+	messages.fetch({
 		success: function(collection) {
 			collection.each(function(message){
 				addToChatWindow(message);
