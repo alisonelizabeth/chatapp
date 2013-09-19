@@ -49,18 +49,15 @@ function fetchMessageCollection(messages) {
 
 // adds message to chat-window; probably should set up a template for this li
 function addToChatWindow(message) {
-	var li = $('<li>' + message.get('message') + '</li>')
+	var m = moment(message.createdAt, "ddd MMM DD YYYY HH:mm:ss");
+	var li = $('<li>' + '<span class="timestamp">' + m.fromNow() + '</span>' + " " + message.get('message') + '</li>')
 	$('.chat').append(li)
 	$('.message-input[type="text"]').val('');
 };
-
 
 function inputUserName(userName) {
 	var name = $('.name-input').val()
 	$('.submit-button').click(function(){
 		$('.modal-dialog').close();
-	})
-
-
-}
-
+	});
+};

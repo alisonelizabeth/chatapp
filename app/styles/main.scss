@@ -106,7 +106,10 @@ body {
     display: inline-block;
 }
 
-
+.timestamp {
+    color: #CCD1D9;
+    font-size: 10px;
+}
 
 /*.input input {
     width: 85%;
@@ -122,11 +125,11 @@ h4.modal-title{
 
 .modal-header
  {
-    border-bottom: none; 
+    border-bottom: none;
 }
 
 .modal-footer {
-    border-top: none; 
+    border-top: none;
 }
 
 .modal.fade.in {
@@ -147,7 +150,7 @@ h4.modal-title{
     background-clip: padding-box;
     outline: none;
     background-image: url('/images/chalkboard.png');
-    background-size: 400px 400px; 
+    background-size: 400px 400px;
     -webkit-border-image:url('/images/chalkboardborder.png') 30 30 round; /* Safari 5 */
     -o-border-image:url('/images/chalkboardborder.png') 30 30 round; /* Opera */
     border-image:url('/images/chalkboardborder.png') 30 30 round;
