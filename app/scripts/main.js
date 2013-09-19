@@ -40,8 +40,8 @@ function fetchMessageCollection(messages) {
 		},
 		error: function(collection, error) {
 			console.log(error.description);
-	}
-});
+		}
+	});
 };
 
 // adds message to chat-window; probably should set up a template for this li
@@ -49,7 +49,7 @@ function addToChatWindow(message) {
 	var li = $('<li>' + message.get('message') + '</li>')
 	$('.chat').append(li)
 	$('.message-input[type="text"]').val('');
-	}
+};
 
 
 
