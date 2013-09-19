@@ -27,15 +27,15 @@ $('document').ready(function() {
 	});
 
 
-}); // end of document ready 
+}); // end of document ready
 
-// Functions 
-// fetches MessageCollection 
+// Functions
+// fetches MessageCollection
 function fetchMessageCollection(messages) {
 	messages.fetch({
 		success: function(collection) {
 			collection.each(function(message){
-				addToChatWindow(message);		
+				addToChatWindow(message);
 		});
 		},
 		error: function(collection, error) {
@@ -48,6 +48,7 @@ function fetchMessageCollection(messages) {
 function addToChatWindow(message) {
 	var li = $('<li>' + message.get('message') + '</li>')
 	$('.chat').append(li)
+	$('.message-input[type="text"]').val('');
 	}
 
 
