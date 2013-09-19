@@ -17,6 +17,8 @@ $('document').ready(function() {
 		message.save(null, {
 			success: function(results) {
 				console.log(results)
+				addToChatWindow(results);
+
 			},
 			error: function(results, error){
 				console.log(error.description)
@@ -27,8 +29,26 @@ $('document').ready(function() {
 
 }); // end of document ready 
 
+// Functions 
+// fetches MessageCollection 
+function fetchMessageCollection(messages) {
+	messages.fetch({
+		success: function(collection) {
+			collection.each(function(message){
+				addToChatWindow(message);		
+		});
+		},
+		error: function(collection, error) {
+			console.log(error.description);
+	}
+});
+};
 
-
+// adds message to chat-window; probably should set up a template for this li
+function addToChatWindow(message) {
+	var li = $('<li>' + message.get('message') + '</li>')
+	$('.chat').append(li)
+	}
 
 
 
