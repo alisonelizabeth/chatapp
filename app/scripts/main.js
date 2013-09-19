@@ -55,11 +55,7 @@ function addToChatWindow(message) {
 };
 
 
-function inputUserName(userName) {
-	var name = $('.name-input').val()
-	$('.submit-button').click(function(){
-		$('.modal-dialog').close();
-	})
+
 	
 
 }
