@@ -19,7 +19,22 @@
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
+        <div class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content chalky">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Welcome to Chalkie</h4>
+              </div>
+              <div class="modal-body">
+                <input id="name-input" placeholder="Enter username here">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary submit-button">Save changes</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 
         <div class="container">
             <div class="header">
@@ -45,6 +60,7 @@
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
+        <script src="bower_components/moment/moment.js"></script>
 
         <!-- endbower -->
         <!-- endbuild -->

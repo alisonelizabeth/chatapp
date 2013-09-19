@@ -2,6 +2,10 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'sass-bootstrap/lib/bootstrap';
 
+* {
+    font-family: chalkboard;
+}
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -106,4 +110,69 @@ body {
 .timestamp {
     color: #CCD1D9;
     font-size: 10px;
+}
+
+/*.input input {
+    width: 85%;
+}*/
+
+/*joe's modal styles*/
+
+
+h4.modal-title{
+    font-family: chalkboard;
+    color: #fff;
+}
+
+.modal-header
+ {
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.modal.fade.in {
+    background: white;
+}
+
+.modal input {
+    text-indent: 5px;
+}
+
+.modal-content {
+    position: relative;
+    background-color: white;
+    border: 1px solid #999999;
+    border: 11px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    background-clip: padding-box;
+    outline: none;
+    background-image: url('/images/chalkboard.png');
+    background-size: 400px 400px;
+    -webkit-border-image:url('/images/chalkboardborder.png') 30 30 round; /* Safari 5 */
+    -o-border-image:url('/images/chalkboardborder.png') 30 30 round; /* Opera */
+    border-image:url('/images/chalkboardborder.png') 30 30 round;
+}
+
+/*save button for modal*/
+.submit-button {
+    color: #8d8d8d;
+    background-color: #fff;
+    border-color: #E2E2E2;
+    box-shadow: inset -1px 0px 3px #858585;
+}
+
+.submit-button:hover{
+    color: #fff;
+    background-color: #D6D8DB;
+    border-color: #E2E2E2;
+    box-shadow: inset -1px 0px 3px #858585;
+}
+
+.submit-button:active{
+    color: #fff;
+    background-color: #D6D8DB;
 }
