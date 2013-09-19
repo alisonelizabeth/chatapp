@@ -34,8 +34,7 @@ function fetchMessageCollection(messages) {
 		success: function(collection) {
 			collection.each(function(message){
 				addToChatWindow(message);
-				$(".chat-window").scrollTop($('.chat-window').height());
-
+				$('.chat-window').scrollTop($('.chat-window').height());
 		});
 		},
 		error: function(collection, error) {
@@ -49,6 +48,6 @@ function addToChatWindow(message) {
 	var m = moment(message.createdAt, "ddd MMM DD YYYY HH:mm:ss");
 	var li = $('<li>' + '<span class="timestamp">' + m.fromNow() + '</span>' + " " + message.get('message') + '</li>')
 	$('.chat').append(li);
-	$(".chat-window").scrollTop($('.chat-window').height());
+	$('.chat-window').scrollTop($('.chat-window').height());
 	$('.message-input[type="text"]').val('');
 };
