@@ -8,9 +8,8 @@ var MessageClassCollection = Parse.Collection.extend({
 var messages = new MessageClassCollection();
 
 $('document').ready(function() {
-	fetchMessageCollection(messages)
+	fetchMessageCollection(messages);
 	$('.submit').click(function(){
-		// event.preventDefault();
 		var message = new MessageClass();
 		var messageVal = $('.message-input').val();
 		message.set('message', messageVal);
@@ -26,8 +25,6 @@ $('document').ready(function() {
 			}
 		});
 	});
-
-
 }); // end of document ready
 
 // Functions
@@ -37,6 +34,8 @@ function fetchMessageCollection(messages) {
 		success: function(collection) {
 			collection.each(function(message){
 				addToChatWindow(message);
+				$(".chat-window").scrollTop($('.chat-window').height());
+
 		});
 		},
 		error: function(collection, error) {
@@ -48,8 +47,10 @@ function fetchMessageCollection(messages) {
 // adds message to chat-window; probably should set up a template for this li
 function addToChatWindow(message) {
 	var li = $('<li>' + message.get('message') + '</li>')
-	$('.chat').append(li)
+	$('.chat').append(li);
+	$(".chat-window").scrollTop($('.chat-window').height());
 	$('.message-input[type="text"]').val('');
 };
+
 
 

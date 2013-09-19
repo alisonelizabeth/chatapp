@@ -93,6 +93,7 @@ body {
 /*team styles*/
 
 .chat-window {
+    overflow-y:scroll;
     border: 1px solid black;
     height:  500px;
 }
@@ -101,9 +102,3 @@ body {
     width: 88%;
     display: inline-block;
 }
-
-
-
-/*.input input {
-    width: 85%;
-}*/
