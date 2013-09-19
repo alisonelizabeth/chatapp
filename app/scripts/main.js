@@ -7,12 +7,14 @@ var MessageClassCollection = Parse.Collection.extend({
 
 var messages = new MessageClassCollection();
 
+
 $('document').ready(function() {
 	fetchMessageCollection(messages)
 	$('.submit').click(function(){
 		// event.preventDefault();
 		var message = new MessageClass();
 		var messageVal = $('.message-input').val();
+
 		message.set('message', messageVal);
 
 		message.save(null, {
@@ -52,4 +54,13 @@ function addToChatWindow(message) {
 	$('.message-input[type="text"]').val('');
 };
 
+
+function inputUserName(userName) {
+	var name = $('.name-input').val()
+	$('.submit-button').click(function(){
+		$('.modal-dialog').close();
+	})
+	
+
+}
 

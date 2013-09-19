@@ -133,6 +133,9 @@ h4.modal-title{
     background: white;
 }
 
+.modal input {
+    text-indent: 5px;
+}
 
 .modal-content {
     position: relative;
@@ -152,20 +155,20 @@ h4.modal-title{
 
 /*save button for modal*/
 .submit-button {
-    color: #000;
+    color: #8d8d8d;
     background-color: #fff;
     border-color: #E2E2E2;
     box-shadow: inset -1px 0px 3px #858585;
 }
 
 .submit-button:hover{
-    color: #000;
+    color: #fff;
     background-color: #D6D8DB;
     border-color: #E2E2E2;
     box-shadow: inset -1px 0px 3px #858585;
 }
 
 .submit-button:active{
-    color: #000;
+    color: #fff;
     background-color: #D6D8DB;
 }
