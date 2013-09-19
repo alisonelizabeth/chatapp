@@ -47,7 +47,7 @@ function fetchMessageCollection(messages) {
 
 // adds message to chat-window; probably should set up a template for this li
 function addToChatWindow(message) {
-	var li = $('<li>' + message.get('message') + '</li>')
+	var li = $('<li>' + '<span class="timestamp">' + message.createdAt + '</span>' + " " + message.get('message') + '</li>')
 	$('.chat').append(li)
 	$('.message-input[type="text"]').val('');
 };
