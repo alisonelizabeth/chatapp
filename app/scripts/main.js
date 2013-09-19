@@ -32,7 +32,7 @@ $('document').ready(function() {
 // Functions 
 // fetches MessageCollection 
 function fetchMessageCollection(messages) {
-	messages.fetch({
+	MessageClassCollection.fetch({
 		success: function(collection) {
 			collection.each(function(message){
 				addToChatWindow(message);		
