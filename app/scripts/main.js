@@ -13,8 +13,8 @@ $('document').ready(function() {
 	$('.submit-button').click(function(){
 		if (validateForm($('.name-input'))) {
 			username = $('.name-input').val();
-			$('button.close').click()	
-		}	
+			$('button.close').click()
+		}
 	});
 
 	fetchMessageCollection(messages);
@@ -73,13 +73,18 @@ function inputUserName(userName) {
 };
 
 function validateForm(input) {
-	var valid = true 
+	var valid = true
 	input.removeClass('warning')
 	$('.error').text('')
 
 	if (input.val() === '') {
 		input.addClass('warning');
-		valid = false	
+		valid = false
 	}
-	return valid 
+	return valid
+};
+
+function generateRandomColor(color) {
+	var randomColor = Math.floor(Math.random()*16777215).toString(16);
+	return randomColor;
 };
