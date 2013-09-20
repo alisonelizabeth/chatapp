@@ -9,7 +9,7 @@ var messages = new MessageClassCollection();
 
 
 $('document').ready(function() {
-	fetchMessageCollection(messages);
+	setInterval(fetchMessageCollection(messages),3000);
 	$('.submit').click(function(event){
 		event.preventDefault();
 		var message = new MessageClass();
@@ -62,3 +62,16 @@ function inputUserName(userName) {
 		$('.modal-dialog').close();
 	});
 };
+
+function validateForm(input) {
+	var valid = true 
+	input.removeClass('warning')
+	$('.error').text('')
+	
+	if ($('.message-input').val() === '') {
+		input.addClass('warning');
+		$('.error').text('Please fill out a message.')
+		valid = false	
+	}
+	return valid 
+}
