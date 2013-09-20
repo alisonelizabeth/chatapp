@@ -44,9 +44,9 @@ $('document').ready(function() {
 // fetches MessageCollection
 function fetchMessageCollection(messages) {
 	setInterval(function() {
-	var previousLength = 0
 	messages.fetch({
 		success: function(collection) {
+			$('.chat-window .chat').html('');
 			collection.each(function(message){
 				addToChatWindow(message);
 				$('.chat-window').scrollTop($('.chat-window')[0].scrollHeight);
@@ -58,7 +58,7 @@ function fetchMessageCollection(messages) {
 	});
 }, 3000)
 };
-
+ 
 // adds message to chat-window; probably should set up a template for this li
 function addToChatWindow(message) {
 	var m = moment(message.createdAt, "ddd MMM DD YYYY HH:mm:ss");

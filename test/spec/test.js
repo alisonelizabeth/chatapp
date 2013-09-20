@@ -6,8 +6,12 @@
  
     it('should save a new message and that message should be returned from Parse', function(done){
       var result;
+      var randomName = 'Name #'+ Math.floor(Math.random()*10000000)
       var randomMessage = 'Message #'+ Math.floor(Math.random()*10000000)
-      $('.message-input').val(randomMessage)
+      $('.name-input').val(randomName);
+      $('.submit-button').click();
+      
+      $('.message-input').val(randomMessage);
       $('.submit').click();
  
       setTimeout(function(){
