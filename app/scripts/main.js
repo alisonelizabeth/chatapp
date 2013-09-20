@@ -9,9 +9,10 @@ var messages = new MessageClassCollection();
 
 
 $('document').ready(function() {
-	setInterval(fetchMessageCollection(messages),3000);
+	fetchMessageCollection(messages);
 	$('.submit').click(function(event){
 		event.preventDefault();
+		if (validateForm($('.message-input')))
 		var message = new MessageClass();
 		var messageVal = $('.message-input').val();
 
