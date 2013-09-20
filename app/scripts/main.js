@@ -7,7 +7,6 @@ var MessageClassCollection = Parse.Collection.extend({
 
 var messages = new MessageClassCollection();
 
-
 $('document').ready(function() {
 	fetchMessageCollection(messages);
 	$('.submit').click(function(event){
@@ -22,7 +21,6 @@ $('document').ready(function() {
 			success: function(results) {
 				console.log(results)
 				addToChatWindow(results);
-
 			},
 			error: function(results, error){
 				console.log(error.description)
