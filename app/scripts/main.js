@@ -11,8 +11,10 @@ $('document').ready(function() {
 	$('.modal').modal('show')
 
 	$('.submit-button').click(function(){
-		username = $('.name-input').val();
-		$('button.close').click()
+		if (validateForm($('.name-input'))) {
+			username = $('.name-input').val();
+			$('button.close').click()	
+		}	
 	});
 
 	fetchMessageCollection(messages);
@@ -36,10 +38,6 @@ $('document').ready(function() {
 			}
 		});
 	});
-	// $('.submit-button').click(function(){
-	// 	var name = $('#name-input').val();
-	// });
-
 }); // end of document ready
 
 // Functions
@@ -78,12 +76,10 @@ function validateForm(input) {
 	var valid = true 
 	input.removeClass('warning')
 	$('.error').text('')
-	
-	if ($('.message-input').val() === '') {
+
+	if (input.val() === '') {
 		input.addClass('warning');
-		$('.error').text('Please fill out a message.')
 		valid = false	
 	}
 	return valid 
 };
-
