@@ -10,8 +10,8 @@ var messages = new MessageClassCollection();
 
 $('document').ready(function() {
 	fetchMessageCollection(messages);
-	$('.submit').click(function(){
-		// event.preventDefault();
+	$('.submit').click(function(event){
+		event.preventDefault();
 		var message = new MessageClass();
 		var messageVal = $('.message-input').val();
 
@@ -38,7 +38,7 @@ function fetchMessageCollection(messages) {
 		success: function(collection) {
 			collection.each(function(message){
 				addToChatWindow(message);
-				$('.chat-window').scrollTop($('.chat-window').height());
+				$('.chat-window').scrollTop(1000);
 		});
 		},
 		error: function(collection, error) {
@@ -52,7 +52,7 @@ function addToChatWindow(message) {
 	var m = moment(message.createdAt, "ddd MMM DD YYYY HH:mm:ss");
 	var li = $('<li>' + '<span class="timestamp">' + m.fromNow() + '</span>' + " " + message.get('message') + '</li>')
 	$('.chat').append(li);
-	$('.chat-window').scrollTop($('.chat-window').height());
+	$('.chat-window').scrollTop(1000);
 	$('.message-input[type="text"]').val('');
 };
 
