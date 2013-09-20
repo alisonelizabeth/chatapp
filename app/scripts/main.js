@@ -85,7 +85,5 @@ function validateForm(input) {
 	return valid
 };
 
-function generateRandomColor(color) {
-	var color = Math.floor(Math.random()*16777215).toString(16);
-	return '#' + color;
-};
+var color = Math.floor(Math.random()*16777215).toString(16);
+randomColor = '#' + color;
