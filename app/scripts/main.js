@@ -7,7 +7,6 @@ var MessageClassCollection = Parse.Collection.extend({
 
 var messages = new MessageClassCollection();
 
-
 $('document').ready(function() {
 	$('.modal').modal('show')
 
@@ -20,6 +19,7 @@ $('document').ready(function() {
 
 	$('.submit').click(function(event){
 		event.preventDefault();
+		if (validateForm($('.message-input')))
 		var message = new MessageClass();
 		var messageVal = $('.message-input').val();
 
@@ -30,7 +30,6 @@ $('document').ready(function() {
 			success: function(results) {
 				console.log(results)
 				addToChatWindow(results);
-
 			},
 			error: function(results, error){
 				console.log(error.description)
@@ -67,3 +66,24 @@ function addToChatWindow(message) {
 	$('.chat-window').scrollTop(1000);
 	$('.message-input[type="text"]').val('');
 };
+
+function inputUserName(userName) {
+	var name = $('.name-input').val();
+	$('.submit-button').click(function(){
+		$('.modal-dialog').close();
+	});
+};
+
+function validateForm(input) {
+	var valid = true 
+	input.removeClass('warning')
+	$('.error').text('')
+	
+	if ($('.message-input').val() === '') {
+		input.addClass('warning');
+		$('.error').text('Please fill out a message.')
+		valid = false	
+	}
+	return valid 
+};
+
