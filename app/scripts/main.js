@@ -59,7 +59,8 @@ function fetchMessageCollection(messages) {
 // adds message to chat-window; probably should set up a template for this li
 function addToChatWindow(message) {
 	var m = moment(message.createdAt, "ddd MMM DD YYYY HH:mm:ss");
-	var li = $('<li>' + '<span class="username">' + message.get('username') + '</span>' + ' ' + '<span class="timestamp">' + m.fromNow() + '</span>' + " " + message.get('message') + '</li>')
+	var li = $('<li>' + '<span class="username">' + message.get('username') + '</span>' + ' ' + '<span class="timestamp">' + m.fromNow() + '</span>' + " " + message.get('message') + '</li>');
+
 	$('.chat').append(li);
 	$('.chat-window').scrollTop(1000);
 	$('.message-input[type="text"]').val('');
@@ -85,6 +86,6 @@ function validateForm(input) {
 };
 
 function generateRandomColor(color) {
-	var randomColor = Math.floor(Math.random()*16777215).toString(16);
-	return randomColor;
+	var color = Math.floor(Math.random()*16777215).toString(16);
+	return '#' + color;
 };
