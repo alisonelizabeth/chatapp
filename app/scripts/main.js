@@ -9,13 +9,22 @@ var messages = new MessageClassCollection();
 
 
 $('document').ready(function() {
+	$('.modal').modal('show')
+
+	$('.submit-button').click(function(){
+		username = $('.name-input').val();
+		$('button.close').click()
+	});
+
 	fetchMessageCollection(messages);
+
 	$('.submit').click(function(event){
 		event.preventDefault();
 		var message = new MessageClass();
 		var messageVal = $('.message-input').val();
 
 		message.set('message', messageVal);
+		message.set('username', username);
 
 		message.save(null, {
 			success: function(results) {
@@ -28,7 +37,10 @@ $('document').ready(function() {
 			}
 		});
 	});
-	$('.modal').modal('show')
+	// $('.submit-button').click(function(){
+	// 	var name = $('#name-input').val();
+	// });
+
 }); // end of document ready
 
 // Functions
@@ -54,11 +66,4 @@ function addToChatWindow(message) {
 	$('.chat').append(li);
 	$('.chat-window').scrollTop(1000);
 	$('.message-input[type="text"]').val('');
-};
-
-function inputUserName(userName) {
-	var name = $('.name-input').val()
-	$('.submit-button').click(function(){
-		$('.modal-dialog').close();
-	});
 };
