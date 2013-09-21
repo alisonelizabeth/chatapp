@@ -15,8 +15,10 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 /* Space out content a bit */
 body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    background-image: url('/images/room.png');
+    background-size: 1400px 900px;
+    background-repeat: none;
+   
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -74,7 +76,7 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 730px;
+        min-width: 1200px;
     }
 
     /* Remove the padding we set earlier */
@@ -95,18 +97,36 @@ body {
 }
 
 /*team styles*/
+.input-field {
+    margin: 0 auto;
+    width: 600px;
+}
 
 .chat-window {
-    overflow-y:scroll;
+    overflow-y: scroll;
     border: 1px solid black;
-    height:  500px;
+    height: 450px;
+    background: white;
+    width: 597px;
+    position: relative;
+    margin: 0 auto;
+    left: -6px;
 }
 
 .message-input {
-    width: 88%;
+    width: 80%;
     display: inline-block;
+    position: relative;
+    top: 2px;
+    left: -5px;
 }
-
+.submit {
+    position: relative;
+    top: 2px;
+    width: 19%;
+    height: 34px;
+    left: -8px;
+}
 .timestamp {
     color: #CCD1D9;
     font-size: 10px;
@@ -121,7 +141,10 @@ li {
     background: yellow;
 }
 
+
+
 /*joe's modal styles*/
+
 
 
 h4.modal-title{
@@ -129,8 +152,7 @@ h4.modal-title{
     color: #fff;
 }
 
-.modal-header
- {
+.modal-header {
     border-bottom: none;
 }
 
@@ -138,13 +160,25 @@ h4.modal-title{
     border-top: none;
 }
 
+.slide-in {
+    left: 308px;
+}
+
 .modal.fade.in {
-    background: white;
+
 }
 
 .modal input {
     text-indent: 5px;
 }
+
+.modal-dialog {
+    position: absolute;
+    left: -625px;
+    margin: 5px;
+    top: 350px;
+}
+
 
 .modal-content {
     position: relative;
@@ -162,6 +196,47 @@ h4.modal-title{
     border-image:url('/images/chalkboardborder.png') 30 30 round;
 }
 
+/*classroom image*/
+#classroom {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    background-repeat: none;
+}
+
+#eagle {
+    position: relative;
+    height: 150px;
+    width: 220px;
+    left: 34px;
+    top: 120px;
+    border: 5px solid #91765D;
+}
+
+#projector {
+    height: 30px;
+    width: 620px;
+    position: relative;
+    left: 43px;
+    top: 61px;
+}
+
+#map {
+    position: relative;
+    top: 120px;
+    right: -30px;
+    height: 150px;
+    width: 220px;
+    border: 5px solid #91765D;
+    margin-left: 26px;
+
+}
 /*save button for modal*/
 .submit-button {
     color: #8d8d8d;
@@ -181,3 +256,45 @@ h4.modal-title{
     color: #fff;
     background-color: #D6D8DB;
 }
+
+/*modal legs*/
+
+.legs {
+    height: 100px;
+    width: 535px;
+    display: inline-block;
+    margin-left: 24px;
+    margin-top: -10px;
+    border-top: 0px;
+    border: 9px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-image:url('/images/chalkboardborder.png') 30 30 round; /* Safari 5 */
+    -o-border-image:url('/images/chalkboardborder.png') 30 30 round; /* Opera */
+    border-image:url('/images/chalkboardborder.png') 30 30 round;
+}
+
+.wheel-box {
+    width: 50px;
+}
+.wheel-1 {
+    background: grey;
+    position: relative;
+    top: -22px;
+    left: 13px;
+    border: 5px solid #333333;
+    height: 30px;
+    width: 30px;
+    border-radius: 35px;
+}
+.wheel-2 {
+    background: grey;
+    position: relative;
+    float: right;
+    top: -54px;
+    right: 11px;
+    border: 5px solid #333333;
+    height: 30px;
+    width: 30px;
+    border-radius: 35px;
+}
+
+

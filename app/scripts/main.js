@@ -10,6 +10,8 @@ var messages = new MessageClassCollection();
 $('document').ready(function() {
 	$('.modal').modal('show');
 
+	$('.modal-dialog').animate({ "left": "+=933px" }, 5000)
+
 	$('.submit-button').click(function(){
 		if (validateForm($('.name-input'))) {
 			username = $('.name-input').val();
@@ -17,8 +19,11 @@ $('document').ready(function() {
 		}	
 	});
 
-	fetchMessageCollection(messages);
+	$('.chat-wrapper').hide()
+	// $('.chat-wrapper').slideDown(6000)
 
+	fetchMessageCollection(messages);
+	
 	$('.submit').click(function(event){
 		event.preventDefault();
 		if (validateForm($('.message-input')))
