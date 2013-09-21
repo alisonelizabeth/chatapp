@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="lib/mocha/mocha.css">
 </head>
 <body>
- <div class="modal fade">
+ <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="modal fade">
           <div class="modal-dialog">
             <div class="modal-content chalky">
               <div class="modal-header">
@@ -14,7 +17,7 @@
                 <h4 class="modal-title">Welcome to Chalkie</h4>
               </div>
               <div class="modal-body">
-                <input id="name-input" placeholder="Enter username here">
+                <input class="name-input" placeholder="Enter username here">
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-primary submit-button">Save changes</button>
@@ -35,10 +38,9 @@
             <div class="input-field">
                 <input type="text" class="form-control message-input" placeholder="Enter a message">
                 <button type="button" class="btn btn btn-default submit">Send</button>
-
+                <span class='error'></span>
+                
             </div>
-
-
         </div> <!-- end of container div -->
 
     <div id="mocha"></div>

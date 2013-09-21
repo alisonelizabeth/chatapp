@@ -9,7 +9,10 @@ var messages = new MessageClassCollection();
 
 $('document').ready(function() {
 	$('.modal').modal('show');
+<<<<<<< HEAD
 	$('.modal-dialog').animate({ "left": "+=900px" }, 5000)
+=======
+>>>>>>> f5be58524f5b79cdd4105cb527adc48238ae4ff5
 
 	$('.submit-button').click(function(){
 		if (validateForm($('.name-input'))) {
