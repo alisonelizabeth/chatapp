@@ -27,6 +27,7 @@ $('document').ready(function() {
 
 		message.set('message', messageVal);
 		message.set('username', username);
+		message.set('color', randomColor);
 
 		message.save(null, {
 			success: function(results) {
