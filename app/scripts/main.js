@@ -13,8 +13,8 @@ $('document').ready(function() {
 	$('.submit-button').click(function(){
 		if (validateForm($('.name-input'))) {
 			username = $('.name-input').val();
-			$('button.close').click();	
-		}	
+			$('button.close').click();
+		}
 	});
 
 	fetchMessageCollection(messages);
@@ -27,6 +27,7 @@ $('document').ready(function() {
 
 		message.set('message', messageVal);
 		message.set('username', username);
+		message.set('color', randomColor);
 
 		message.save(null, {
 			success: function(results) {
@@ -60,11 +61,11 @@ function fetchMessageCollection(messages) {
 	});
 }, 3000)
 };
- 
+
 // adds message to chat-window; probably should set up a template for this li
 function addToChatWindow(message) {
 	var m = moment(message.createdAt, "ddd MMM DD YYYY HH:mm:ss");
-	var li = $('<li>' + '<span class="username">' + message.get('username') + '</span>' + ' ' + '<span class="timestamp">' + m.fromNow() + '</span>' + " " + message.get('message') + '</li>')
+	var li = $('<li>' + '<span class="username">' + message.get('username') + '</span>' + ' ' + '<span class="timestamp">' + m.fromNow() + '</span>' + " " + message.get('message') + '</li>');
 	$('.chat').append(li);
 	$('.chat-window').scrollTop($('.chat-window')[0].scrollHeight);	
 };
@@ -77,13 +78,20 @@ function inputUserName(userName) {
 };
 
 function validateForm(input) {
-	var valid = true 
+	var valid = true
 	input.removeClass('warning')
 	$('.error').text('')
 
 	if (input.val() === '') {
 		input.addClass('warning');
-		valid = false	
+		valid = false
 	}
-	return valid 
+	return valid
 };
+
+var color = Math.floor(Math.random()*16777215).toString(16);
+randomColor = '#' + color;
+
+// function addColorToUsername () {
+// 	$('span:last-child .username').css('background', message.get('color'))
+// };
