@@ -9,10 +9,8 @@ var messages = new MessageClassCollection();
 
 $('document').ready(function() {
 	$('.modal').modal('show');
-<<<<<<< HEAD
-	$('.modal-dialog').animate({ "left": "+=900px" }, 5000)
-=======
->>>>>>> f5be58524f5b79cdd4105cb527adc48238ae4ff5
+
+	$('.modal-dialog').animate({ "left": "+=933px" }, 5000)
 
 	$('.submit-button').click(function(){
 		if (validateForm($('.name-input'))) {
@@ -21,8 +19,11 @@ $('document').ready(function() {
 		}	
 	});
 
-	fetchMessageCollection(messages);
+	$('.chat-wrapper').hide()
+	// $('.chat-wrapper').slideDown(6000)
 
+	fetchMessageCollection(messages);
+	
 	$('.submit').click(function(event){
 		event.preventDefault();
 		if (validateForm($('.message-input')))

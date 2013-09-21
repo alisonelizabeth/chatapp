@@ -16,16 +16,16 @@
         <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
     </head>
     <body>
-            <img id="eagle" src="/images/eagle.png">
-            <img id="projector" src="/images/projection-screen.jpg">
-            <img id="map" src="/images/map.png">
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="modal fade">
-            <img id="eagle" src="/images/eagle.png">
+
+    <div class="container">
+
+       <div class="modal fade">
+<!--        <img id="eagle" src="/images/eagle.png">
             <img id="projector" src="/images/projection-screen.jpg">
-            <img id="map" src="/images/map.png">
+            <img id="map" src="/images/map.png"> -->
           <div class="modal-dialog slide-in">     
             <div class="modal-content chalky">
               <div class="modal-header">
@@ -48,21 +48,25 @@
           </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
-        <div class="container">
+        <!-- modal closed -->
+            <img id="eagle" src="/images/eagle.png">
+            <img id="projector" src="/images/projection-screen.jpg">
+            <img id="map" src="/images/map.png">
 
-            <div class="chat-window">
-                <ul class="chat"></ul>
+            <div class="chat-wrapper">
+                <div class="chat-window">
+                    <ul class="chat"></ul>
+                </div>
+
+                <div class="input-field">
+                    <input type="text" class="form-control message-input" placeholder="Enter a message">
+                    <button type="button" class="btn btn btn-default submit">Send</button>
+                    <span class='error'></span>
+
+                </div>
             </div>
 
-            <div class="input-field">
-                <input type="text" class="form-control message-input" placeholder="Enter a message">
-                <button type="button" class="btn btn btn-default submit">Send</button>
-                <span class='error'></span>
-
-            </div>
-
-
-        </div> <!-- end of container div -->
+    </div> <!-- end of container div -->
 
 
 

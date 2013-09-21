@@ -17,6 +17,8 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 body {
     background-image: url('/images/room.png');
     background-size: 1400px 900px;
+    background-repeat: none;
+   
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -74,7 +76,7 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 730px;
+        min-width: 1200px;
     }
 
     /* Remove the padding we set earlier */
@@ -95,6 +97,10 @@ body {
 }
 
 /*team styles*/
+.input-field {
+    margin: 0 auto;
+    width: 600px;
+}
 
 .chat-window {
     overflow-y: scroll;
@@ -103,18 +109,22 @@ body {
     background: white;
     width: 597px;
     position: relative;
-    left: 33px;
-    top: -61px;
+    margin: 0 auto;
+    left: -6px;
 }
 
 .message-input {
-    width: 73%;
+    width: 80%;
     display: inline-block;
     position: relative;
-    top: -61px;
-    left: 32px;
+    top: -40px;
 }
-
+.submit {
+    position: relative;
+    top: -40px;
+    width: 17%;
+    height: 34px;
+}
 .timestamp {
     color: #CCD1D9;
     font-size: 10px;
@@ -129,13 +139,7 @@ li {
     background: yellow;
 }
 
-.submit {
-    position: relative;
-    top: -61px;
-    left: 30px;
-    width: 84px;
-    height: 34px;
-}
+
 
 /*joe's modal styles*/
 
@@ -154,9 +158,12 @@ h4.modal-title{
     border-top: none;
 }
 
+.slide-in {
+    left: 308px;
+}
+
 .modal.fade.in {
-    background-image: url('/images/room.png');
-    background-size: 1400px 900px;
+
 }
 
 .modal input {
@@ -169,6 +176,7 @@ h4.modal-title{
     margin: 5px;
     top: 350px;
 }
+
 
 .modal-content {
     position: relative;
@@ -205,7 +213,7 @@ h4.modal-title{
     height: 150px;
     width: 220px;
     left: 34px;
-    top: 62px;
+    top: 120px;
     border: 5px solid #91765D;
 }
 
@@ -214,11 +222,12 @@ h4.modal-title{
     width: 620px;
     position: relative;
     left: 43px;
+    top: 61px;
 }
 
 #map {
     position: relative;
-    top: 62px;
+    top: 120px;
     right: -30px;
     height: 150px;
     width: 220px;
