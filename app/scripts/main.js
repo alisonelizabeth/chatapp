@@ -61,7 +61,6 @@ function fetchMessageCollection(messages) {
 function addToChatWindow(message) {
 	var m = moment(message.createdAt, "ddd MMM DD YYYY HH:mm:ss");
 	var li = $('<li>' + '<span class="username">' + message.get('username') + '</span>' + ' ' + '<span class="timestamp">' + m.fromNow() + '</span>' + " " + message.get('message') + '</li>');
-
 	$('.chat').append(li);
 	$('.chat-window').scrollTop(1000);
 	$('.message-input[type="text"]').val('');
@@ -88,3 +87,7 @@ function validateForm(input) {
 
 var color = Math.floor(Math.random()*16777215).toString(16);
 randomColor = '#' + color;
+
+// function addColorToUsername () {
+// 	$('span:last-child .username').css('background', message.get('color'))
+// };
