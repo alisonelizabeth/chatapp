@@ -32,6 +32,8 @@ $('document').ready(function() {
 			success: function(results) {
 				console.log(results)
 				addToChatWindow(results);
+				$('.message-input[type="text"]').val('');
+
 			},
 			error: function(results, error){
 				console.log(error.description)
@@ -64,8 +66,7 @@ function addToChatWindow(message) {
 	var m = moment(message.createdAt, "ddd MMM DD YYYY HH:mm:ss");
 	var li = $('<li>' + '<span class="username">' + message.get('username') + '</span>' + ' ' + '<span class="timestamp">' + m.fromNow() + '</span>' + " " + message.get('message') + '</li>')
 	$('.chat').append(li);
-	$('.chat-window').scrollTop($('.chat-window')[0].scrollHeight);
-	$('.message-input[type="text"]').val('');
+	$('.chat-window').scrollTop($('.chat-window')[0].scrollHeight);	
 };
 
 function inputUserName(userName) {
