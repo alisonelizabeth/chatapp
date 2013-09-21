@@ -105,7 +105,7 @@ body {
 .chat-window {
     overflow-y: scroll;
     border: 1px solid black;
-    height: 500px;
+    height: 450px;
     background: white;
     width: 597px;
     position: relative;
@@ -117,13 +117,15 @@ body {
     width: 80%;
     display: inline-block;
     position: relative;
-    top: -40px;
+    top: 2px;
+    left: -5px;
 }
 .submit {
     position: relative;
-    top: -40px;
-    width: 17%;
+    top: 2px;
+    width: 19%;
     height: 34px;
+    left: -8px;
 }
 .timestamp {
     color: #CCD1D9;
