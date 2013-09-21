@@ -1,4 +1,5 @@
 /*global describe, it */
+
 'use strict';
 (function () {
   describe('The chat app', function(){
@@ -32,17 +33,40 @@
       }, 2000)
     }); // end it()
 
-    // it ('should add a new message with timestamp to a div with the class "chat-window" when the send button is clicked', function(done) {
-    //   var randomMessage = 'Message #'+ Math.floor(Math.random()*10000000)
-    //   var m = moment(randomMessage.createdAt, "ddd MMM DD YYYY HH:mm:ss");
-    //   $('.message-input').val(randomMessage)
-    //   $('.submit').click();
+      it ('should append the new message to the ul', function(done) {
+          var randomName = 'Name #'+ Math.floor(Math.random()*10000000)
+          var randomMessage = 'Message #'+ Math.floor(Math.random()*10000000)
+    
+          $('.name-input').val(randomName);
+          $('.submit-button').click();
+          
+          $('.message-input').val(randomMessage);
+          $('.submit').click();
 
-    //   setTimeout(function(){
-    //     expect($('.chat-window ul li').last().text()).to.equal((m.fromNow()) + ' ' + randomMessage)
-    //     done();
-    //   },2000)
-    // }); // end it()
+          setTimeout(function(){
+            expect ($('.chat-window ul li').last().text()).to.equal(randomName + ' a few seconds ago ' + randomMessage)
+            done();
+          }, 2000);
+      });
+      // end it()
 
+      // working on this
+      it ('should not send a message to parse if input is left blank', function(){
+        $('.name-input').val('')
+        $('.submit-button').click()
+        expect($('.name-input')).to.throw(Error)
+
+      })
+
+
+
+
+
+
+
+
+
+
+   
   }); // end of describe ()
 })();
