@@ -8,6 +8,7 @@ var MessageClassCollection = Parse.Collection.extend({
 var messages = new MessageClassCollection();
 
 $('document').ready(function() {
+
 	$('.modal').modal('show');
 
 	$('.modal-dialog').animate({ "left": "+=933px" }, 5000)
@@ -15,12 +16,11 @@ $('document').ready(function() {
 	$('.submit-button').click(function(){
 		if (validateForm($('.name-input'))) {
 			inputUserName();
-			$('button.close').click();
+			$('.submit-button').attr('data-dismiss', 'modal')
 		}
 	});
 
-	$('.chat-wrapper').hide()
-	// $('.chat-wrapper').slideDown(6000)
+	$('.chat-wrapper').hide();
 
 	fetchMessageCollection(messages);
 
@@ -70,7 +70,7 @@ function fetchMessageCollection(messages) {
 // adds message to chat-window; probably should set up a template for this li
 function addToChatWindow(message) {
 	var m = moment(message.createdAt, "ddd MMM DD YYYY HH:mm:ss");
-	var li = $('<li>' + '<span class="username">' + message.get('username') + '</span>' + ' ' + '<span class="timestamp">' + m.fromNow() + '</span>' + " " + message.get('message') + '</li>');
+	var li = $('<li>' + '<span class="username">' + message.get('username') + '</span>' + ' ' + '<span class="timestamp">' + m.fromNow() + '</span>' + " " + message.get('message') + '</li>')
 	$('.chat').append(li);
 	$('.chat-window').scrollTop($('.chat-window')[0].scrollHeight);
 };
