@@ -14,7 +14,7 @@ $('document').ready(function() {
 
 	$('.submit-button').click(function(){
 		if (validateForm($('.name-input'))) {
-			username = $('.name-input').val();
+			inputUserName();
 			$('button.close').click();
 		}
 	});
@@ -23,7 +23,7 @@ $('document').ready(function() {
 	// $('.chat-wrapper').slideDown(6000)
 
 	fetchMessageCollection(messages);
-	
+
 	$('.submit').click(function(event){
 		event.preventDefault();
 		if (validateForm($('.message-input')))
@@ -31,7 +31,7 @@ $('document').ready(function() {
 		var messageVal = $('.message-input').val();
 
 		message.set('message', messageVal);
-		message.set('username', username);
+		message.set('username', inputUserName());
 		message.set('color', randomColor);
 
 		message.save(null, {
@@ -72,14 +72,12 @@ function addToChatWindow(message) {
 	var m = moment(message.createdAt, "ddd MMM DD YYYY HH:mm:ss");
 	var li = $('<li>' + '<span class="username">' + message.get('username') + '</span>' + ' ' + '<span class="timestamp">' + m.fromNow() + '</span>' + " " + message.get('message') + '</li>');
 	$('.chat').append(li);
-	$('.chat-window').scrollTop($('.chat-window')[0].scrollHeight);	
+	$('.chat-window').scrollTop($('.chat-window')[0].scrollHeight);
 };
 
-function inputUserName(userName) {
-	var name = $('.name-input').val();
-	$('.submit-button').click(function(){
-		$('.modal-dialog').close();
-	});
+function inputUserName() {
+	var username = $('.name-input').val();
+	return username;
 };
 
 function validateForm(input) {
