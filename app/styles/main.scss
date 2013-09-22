@@ -138,10 +138,8 @@ li {
 
 /* validation style */
 .warning {
-    background: yellow;
+    background: red;
 }
-
-
 
 /*joe's modal styles*/
 
@@ -154,6 +152,7 @@ h4.modal-title{
 
 .modal-header {
     border-bottom: none;
+    text-align: center;
 }
 
 .modal-footer {
@@ -161,7 +160,7 @@ h4.modal-title{
 }
 
 .slide-in {
-    left: 308px;
+    left: 330px;
 }
 
 .modal.fade.in {
@@ -170,6 +169,7 @@ h4.modal-title{
 
 .modal input {
     text-indent: 5px;
+    height: 33px;
 }
 
 .modal-dialog {
@@ -181,6 +181,8 @@ h4.modal-title{
 
 
 .modal-content {
+    text-align: center;
+    height: 225px;
     position: relative;
     background-color: white;
     border: 1px solid #999999;
