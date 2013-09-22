@@ -8,6 +8,7 @@ var MessageClassCollection = Parse.Collection.extend({
 var messages = new MessageClassCollection();
 
 $('document').ready(function() {
+
 	$('.modal').modal('show');
 
 	$('.modal-dialog').animate({ "left": "+=933px" }, 5000)
@@ -15,12 +16,11 @@ $('document').ready(function() {
 	$('.submit-button').click(function(){
 		if (validateForm($('.name-input'))) {
 			username = $('.name-input').val();
-			$('button.close').click();
-		}
+			$('.submit-button').attr('data-dismiss', 'modal')
+		}	
 	});
 
-	$('.chat-wrapper').hide()
-	// $('.chat-wrapper').slideDown(6000)
+	$('.chat-wrapper').hide();
 
 	fetchMessageCollection(messages);
 	
@@ -66,11 +66,11 @@ function fetchMessageCollection(messages) {
 	});
 }, 3000)
 };
-
+ 
 // adds message to chat-window; probably should set up a template for this li
 function addToChatWindow(message) {
 	var m = moment(message.createdAt, "ddd MMM DD YYYY HH:mm:ss");
-	var li = $('<li>' + '<span class="username">' + message.get('username') + '</span>' + ' ' + '<span class="timestamp">' + m.fromNow() + '</span>' + " " + message.get('message') + '</li>');
+	var li = $('<li>' + '<span class="username">' + message.get('username') + '</span>' + ' ' + '<span class="timestamp">' + m.fromNow() + '</span>' + " " + message.get('message') + '</li>')
 	$('.chat').append(li);
 	$('.chat-window').scrollTop($('.chat-window')[0].scrollHeight);	
 };
@@ -83,7 +83,7 @@ function inputUserName(userName) {
 };
 
 function validateForm(input) {
-	var valid = true
+	var valid = true 
 	input.removeClass('warning')
 	$('.error').text('')
 
@@ -91,7 +91,7 @@ function validateForm(input) {
 		input.addClass('warning');
 		valid = false
 	}
-	return valid
+	return valid 
 };
 
 var color = Math.floor(Math.random()*16777215).toString(16);
