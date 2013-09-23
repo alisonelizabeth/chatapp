@@ -13,7 +13,7 @@ $('document').ready(function() {
 
 	$('.modal-dialog').animate({ "left": "+=933px" }, 5000)
 
-	
+
 
 	$('.submit-button').click(function(){
 		if (validateForm($('.name-input'))) {
@@ -71,9 +71,10 @@ function fetchMessageCollection(messages) {
 
 // adds message to chat-window; probably should set up a template for this li
 function addToChatWindow(message) {
-	var m = moment(message.createdAt, "ddd MMM DD YYYY HH:mm:ss");
-	var li = $('<li>' + '<span class="username">' + message.get('username') + '</span>' + ' ' + '<span class="timestamp">' + m.fromNow() + '</span>' + " " + message.get('message') + '</li>')
-	$('.chat').append(li);
+	m = moment(message.createdAt, "ddd MMM DD YYYY HH:mm:ss");
+	var chatTemplate = _.template( $('#chat-template').text())
+	var renderedTemplate = chatTemplate( {message: message} )
+	$('.chat').append(renderedTemplate);
 	$('.chat-window').scrollTop($('.chat-window')[0].scrollHeight);
 };
 

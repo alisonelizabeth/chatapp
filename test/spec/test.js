@@ -13,6 +13,8 @@
       $('.submit-button').click();
       
       $('.message-input').val(randomMessage);
+
+      setTimeout(function(){
       $('.submit').click();
  
       setTimeout(function(){
@@ -22,8 +24,10 @@
         query.find({
           success: function(results) {
             result = results[0];
+            setTimeout(function(){
             expect(result.get('message')).to.equal(randomMessage);
             done();
+            }, 2000)
           },
           error: function(results, error) {
             done(error.description);
@@ -31,6 +35,7 @@
         });
  
       }, 2000)
+    }, 2000)
     }); // end it()
 
       it ('should append the new message to the ul', function(done) {
