@@ -13,6 +13,8 @@ $('document').ready(function() {
 
 	$('.modal-dialog').animate({ "left": "+=933px" }, 5000)
 
+	
+
 	$('.submit-button').click(function(){
 		if (validateForm($('.name-input'))) {
 			inputUserName();
