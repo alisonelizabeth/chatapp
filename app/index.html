@@ -70,13 +70,13 @@
 
             <li>
                 <span class="username">
-                    <%= message.username %>
+                    <%= message.get('username') %>
                 </span>
-                ": "
+                :
                 <span class="message">
-                    <%= message.message %>
+                    <%= message.get('message') %>
                 </span>
-                " "
+
                 <span class="timestamp">
                     <%= m.fromNow() %>
                 </span>
