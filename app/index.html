@@ -26,7 +26,7 @@
 <!--        <img id="eagle" src="/images/eagle.png">
             <img id="projector" src="/images/projection-screen.jpg">
             <img id="map" src="/images/map.png"> -->
-          <div class="modal-dialog slide-in">     
+          <div class="modal-dialog slide-in">
             <div class="modal-content chalky">
               <div class="modal-header">
                 <h4 class="modal-title">Welcome to Chalkie</h4>
@@ -39,7 +39,7 @@
             </div><!-- /.modal-content -->
 
             <div class="legs"></div>
-                
+
                 <div class="wheel-box"><div class="wheel-1"></div></div>
                 <div class="wheel-2"></div>
 
@@ -66,7 +66,23 @@
 
     </div> <!-- end of container div -->
 
+        <script type="text/template" id="chat-template">
 
+            <li>
+                <span class="username">
+                    <%= message.get('username') %>
+                </span>
+                :
+                <span class="message">
+                    <%= message.get('message') %>
+                </span>
+
+                <span class="timestamp">
+                    <%= m.fromNow() %>
+                </span>
+            </li>
+
+        </script>
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
