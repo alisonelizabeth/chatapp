@@ -7,11 +7,12 @@ var MessageClassCollection = Parse.Collection.extend({
 
 var messages = new MessageClassCollection();
 
+        $('.chat-wrapper').hide();
 $('document').ready(function() {
 
         $('.modal').modal('show');
 
-        $('.modal-dialog').animate({ "left": "+=1233px" }, 3000)
+        $('.modal-dialog').animate({ "left": "+=1033px" }, 3000)
 
 
 
@@ -19,11 +20,10 @@ $('document').ready(function() {
                 if (validateForm($('.name-input'))) {
                         inputUserName();
                         $('.submit-button').attr('data-dismiss', 'modal')
-                        $('.chat-wrapper').slideDown(2000);
+                        $('.chat-wrapper').slideDown(3000);
                 }
         });
 
-        $('.chat-wrapper').hide();
 
 
         fetchMessageCollection(messages);
