@@ -11,7 +11,7 @@ $('document').ready(function() {
 
         $('.modal').modal('show');
 
-        $('.modal-dialog').animate({ "left": "+=933px" }, 5000)
+        $('.modal-dialog').animate({ "left": "+=1233px" }, 3000)
 
 
 
@@ -19,10 +19,12 @@ $('document').ready(function() {
                 if (validateForm($('.name-input'))) {
                         inputUserName();
                         $('.submit-button').attr('data-dismiss', 'modal')
+                        $('.chat-wrapper').slideDown(2000);
                 }
         });
 
         $('.chat-wrapper').hide();
+
 
         fetchMessageCollection(messages);
 
