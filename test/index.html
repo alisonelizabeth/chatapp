@@ -9,39 +9,50 @@
  <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="modal fade">
-          <div class="modal-dialog">
+    <div class="container">
+
+       <div class="modal fade">
+          <div class="modal-dialog slide-in">
             <div class="modal-content chalky">
               <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+
                 <h4 class="modal-title">Welcome to Chalkie</h4>
               </div>
               <div class="modal-body">
                 <input class="name-input" placeholder="Enter username here">
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary submit-button">Save changes</button>
+                <button type="button" class="btn btn-primary submit-button">Save</button>
+
               </div>
             </div><!-- /.modal-content -->
+
+            <div class="legs"></div>
+
+                <div class="wheel-box"><div class="wheel-1"></div></div>
+                <div class="wheel-2"></div>
+
           </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
-        <div class="container">
-            <div class="header">
-                <h1>ChatApp</h1>
+        <!-- modal closed -->
+            <img id="eagle" src="/images/eagle.png">
+            <img id="projector" src="/images/projection-screen.jpg">
+            <img id="map" src="/images/map.png">
+
+            <div class="chat-wrapper">
+                <div class="chat-window">
+                    <ul class="chat"></ul>
+                </div>
+
+                <div class="input-field">
+                    <input type="text" class="form-control message-input" placeholder="Enter a message">
+                    <button type="button" class="btn btn btn-default submit">Send</button>
+                    <span class='error'></span>
+
+                </div>
             </div>
 
-            <div class="chat-window">
-                <ul class="chat"></ul>
-            </div>
-
-            <div class="input-field">
-                <input type="text" class="form-control message-input" placeholder="Enter a message">
-                <button type="button" class="btn btn btn-default submit">Send</button>
-                <span class='error'></span>
-                
-            </div>
-        </div> <!-- end of container div -->
+    </div>
 
     <div id="mocha"></div>
     <script src="lib/mocha/mocha.js"></script>
@@ -51,13 +62,30 @@
     <script>var expect = chai.expect</script>
 
     <!-- include source files here... -->
+    <script src="../app/bower_components/underscore/underscore.js"></script>
     <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
     <script src="../app/bower_components/jquery/jquery.js"></script>
-    <script src="../app/bower_components/underscore/underscore.js"></script>
     <script src="../app/bower_components/moment/moment.js"></script>
     <script src="../app/scripts/main.js"></script>
     <script src="../app/bower_components/sass-bootstrap/js/modal.js"></script>
 
+    <script type="text/template" id="chat-template">
+
+        <li>
+            <span class="username">
+                <%= message.get('username') +':' %>
+            </span>
+            
+            <span class="message">
+                <%= message.get('message') %>
+            </span>
+
+            <span class="timestamp">
+                <%= moment(message.createdAt, "ddd MMM DD YYYY HH:mm:ss").fromNow() %>
+            </span>
+        </li>
+
+    </script>
 
     <!-- include spec files here... -->
     <script src="spec/test.js"></script>

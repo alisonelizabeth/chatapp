@@ -22,7 +22,7 @@
 
     <div class="container">
 
-       <div class="modal fade">
+       <div class="modal fade" data-backdrop="static">
           <div class="modal-dialog slide-in">
             <div class="modal-content chalky">
               <div class="modal-header">
@@ -69,15 +69,15 @@
 
             <li>
                 <span class="username">
-                    <%= message.get('username') %>
+                    <%= message.get('username') +':' %>
                 </span>
-                :
+                
                 <span class="message">
                     <%= message.get('message') %>
                 </span>
 
                 <span class="timestamp">
-                    <%= m.fromNow() %>
+                    <%= moment(message.createdAt, "ddd MMM DD YYYY HH:mm:ss").fromNow() %>
                 </span>
             </li>
 
